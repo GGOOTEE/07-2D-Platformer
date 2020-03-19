@@ -170,7 +170,7 @@ __meta__ = {
 [node name="Actions" type="AnimatedSprite" parent="."]
 frames = SubResource( 5 )
 animation = "Idle"
-frame = 2
+frame = 1
 speed_scale = 1.2
 playing = true
 flip_h = true
