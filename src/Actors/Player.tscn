@@ -149,32 +149,32 @@ flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 1288, 0, 184, 137 )
 
-[sub_resource type="AtlasTexture" id=37]
+[sub_resource type="AtlasTexture" id=29]
 flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( 0, 0, 184, 137 )
 
-[sub_resource type="AtlasTexture" id=38]
+[sub_resource type="AtlasTexture" id=30]
 flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( 184, 0, 184, 137 )
 
-[sub_resource type="AtlasTexture" id=39]
+[sub_resource type="AtlasTexture" id=31]
 flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( 368, 0, 184, 137 )
 
-[sub_resource type="AtlasTexture" id=40]
+[sub_resource type="AtlasTexture" id=32]
 flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( 552, 0, 184, 137 )
 
-[sub_resource type="AtlasTexture" id=41]
+[sub_resource type="AtlasTexture" id=33]
 flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( 736, 0, 184, 137 )
 
-[sub_resource type="AtlasTexture" id=42]
+[sub_resource type="AtlasTexture" id=34]
 flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( 920, 0, 184, 137 )
@@ -211,7 +211,7 @@ animations = [ {
 "name": "Run",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ) ],
+"frames": [ SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ) ],
 "loop": true,
 "name": "Idle",
 "speed": 5.0
@@ -234,7 +234,7 @@ gravity = 1500.0
 position = Vector2( 0, -25 )
 frames = SubResource( 35 )
 animation = "Idle"
-frame = 3
+frame = 4
 speed_scale = 1.75
 playing = true
 

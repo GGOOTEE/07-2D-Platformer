@@ -52,7 +52,7 @@ export var slope_slide_threshold := 50.0
 var direction = 0
 var velocity := Vector2()
 onready var player = get_node(".")
-onready var sprite = get_node("sprite")
+onready var sprite = get_node("Actions")
 
 func _physics_process(delta):
 	var direction_x := Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
