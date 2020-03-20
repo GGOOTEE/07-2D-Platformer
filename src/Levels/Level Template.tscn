@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/tileset.png" type="Texture" id=1]
 [ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=2]
@@ -6,6 +6,9 @@
 [ext_resource path="res://src/Objects/Coin.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/Objects/Portal2D.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/Levels/Level02.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/equinox-2194645_1280.webp" type="Texture" id=7]
+[ext_resource path="res://assets/Tiny Platformer - Hills Asset Pack/Background/Background layer 03.png" type="Texture" id=9]
+[ext_resource path="res://assets/Tiny Platformer - Hills Asset Pack/Background/Background layer 04.png" type="Texture" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 80, 0, 80, 80, 0, 80 )
@@ -29,6 +32,21 @@ points = PoolVector2Array( 0, 0, 80, 0, 80, 80, 0, 80 )
 0/z_index = 0
 
 [node name="Level01" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 689, 606 )
+scale = Vector2( 2.04919, 1.79719 )
+texture = ExtResource( 7 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+position = Vector2( 571.875, 546.063 )
+scale = Vector2( 4.11442, 1.98146 )
+texture = ExtResource( 9 )
+
+[node name="Sprite4" type="Sprite" parent="."]
+position = Vector2( 534.25, 753 )
+scale = Vector2( 3.825, 3.64872 )
+texture = ExtResource( 10 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 2 )
@@ -58,6 +76,12 @@ scale = Vector2( 0.5, 0.7 )
 
 [node name="CollisionShape2D" parent="Portal2D" index="1"]
 position = Vector2( 0, -171 )
+
+[node name="ColorRect" parent="Portal2D/TransitionLayer" index="0"]
+margin_left = 1519.0
+margin_top = 444.0
+margin_right = 2543.0
+margin_bottom = 1044.0
 
 [node name="Coin2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 760, 460 )

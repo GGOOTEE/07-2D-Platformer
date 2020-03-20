@@ -24,6 +24,10 @@ config/name="2D-Platformer"
 run/main_scene="res://src/Levels/Level Template.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global="*res://Scenes/Global.tscn"
+
 [input]
 
 move_left={
