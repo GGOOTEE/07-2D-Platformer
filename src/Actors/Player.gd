@@ -74,10 +74,10 @@ func _physics_process(delta):
 	if just_landed:
 		snap = true	
 
-	if(direction == 0):
-		sprite.play("Idle")
-	else:
-		sprite.play("Run")
+	#if(direction == 0):
+		#sprite.play("Idle")
+	#else:
+		#sprite.play("Run")
 
 #func calculate_stomp_velocity(linear_velocity: Vector2, stomp_impulse: float) -> Vector2:
 	#var stomp_jump: = -speed.y if Input.is_action_pressed("jump") else -stomp_impulse
