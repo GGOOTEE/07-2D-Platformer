@@ -1,13 +1,14 @@
 extends Node2D
 
 func _ready():
-	pass
+	get_node("/root/SaveSystem").connect("change_health", self, "_on_health_changed")
+	get_node("/root/SaveSystem").connect("change_score", self, "_on_score_changed")
 
-func _on_Player_health_changed():
+func _on_health_changed():
 	var h = get_node("/root/SaveSystem").health
 	$HEALTH.text = "Health: " + str(h)
 
 
-func _on_Player_score_changed():
+func _on_score_changed():
 	var s = get_node("/root/SaveSystem").score
 	$SCORE.text = "Score: " + str(s)
