@@ -24,8 +24,8 @@ func die() -> void:
 
 func _on_attack_body_entered(body):
 	if body.name == "Player":
-		get_node("/root/SaveSystem").health -= 50
-		get_node("/root/SaveSystem").score -= 25
+		get_node("/root/SaveSystem").update_health(-50)
+		get_node("/root/SaveSystem").update_score(-25)
 		$Actions.animation = "Attack"
 		_velocity.x = 0
 

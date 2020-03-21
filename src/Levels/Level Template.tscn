@@ -7,10 +7,10 @@
 [ext_resource path="res://src/Objects/Portal2D.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/Levels/Level02.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/equinox-2194645_1280.webp" type="Texture" id=7]
+[ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=8]
 [ext_resource path="res://assets/Tiny Platformer - Hills Asset Pack/Background/Background layer 03.png" type="Texture" id=9]
 [ext_resource path="res://assets/Tiny Platformer - Hills Asset Pack/Background/Background layer 04.png" type="Texture" id=10]
 [ext_resource path="res://src/Levels/Level01.gd" type="Script" id=11]
-[ext_resource path="res://src/HUD.gd" type="Script" id=12]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 80, 0, 80, 80, 0, 80 )
@@ -131,28 +131,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HUD" type="Node2D" parent="."]
-script = ExtResource( 12 )
-
-[node name="HEALTH" type="Label" parent="HUD"]
-margin_left = 1.0
-margin_top = 79.0
-margin_right = 55.0
-margin_bottom = 93.0
-text = "HEALTH:"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="SCORE" type="Label" parent="HUD"]
-margin_left = 1.0
-margin_top = 105.0
-margin_right = 46.0
-margin_bottom = 119.0
-text = "SCORE:"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="HUD" parent="." instance=ExtResource( 8 )]
 
 [editable path="Coin"]
 
