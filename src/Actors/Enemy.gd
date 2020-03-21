@@ -26,8 +26,10 @@ func _on_attack_body_entered(body):
 	if body.name == "Player":
 		get_node("/root/SaveSystem").health -= 50
 		get_node("/root/SaveSystem").score -= 25
-		$Actions.animation == "Attack"
+		$Actions.animation = "Attack"
+		_velocity.x = 0
 
 func _on_Actions_animation_finished():
 	if $Actions.animation == "Attack":
 		$Actions.animation = "Idle"
+		_velocity.x = -speed.x

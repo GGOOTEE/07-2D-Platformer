@@ -86,52 +86,52 @@ region = Rect2( 552, 0, 184, 137 )
 
 [sub_resource type="AtlasTexture" id=16]
 flags = 4
-atlas = ExtResource( 6 )
+atlas = ExtResource( 4 )
 region = Rect2( 0, 0, 184, 137 )
 
 [sub_resource type="AtlasTexture" id=17]
 flags = 4
-atlas = ExtResource( 6 )
+atlas = ExtResource( 4 )
 region = Rect2( 184, 0, 184, 137 )
 
 [sub_resource type="AtlasTexture" id=18]
 flags = 4
 atlas = ExtResource( 6 )
-region = Rect2( 368, 0, 184, 137 )
+region = Rect2( 0, 0, 184, 137 )
 
 [sub_resource type="AtlasTexture" id=19]
 flags = 4
 atlas = ExtResource( 6 )
-region = Rect2( 552, 0, 184, 137 )
+region = Rect2( 184, 0, 184, 137 )
 
 [sub_resource type="AtlasTexture" id=20]
 flags = 4
 atlas = ExtResource( 6 )
-region = Rect2( 736, 0, 184, 137 )
+region = Rect2( 368, 0, 184, 137 )
 
 [sub_resource type="AtlasTexture" id=21]
 flags = 4
 atlas = ExtResource( 6 )
-region = Rect2( 920, 0, 184, 137 )
+region = Rect2( 552, 0, 184, 137 )
 
 [sub_resource type="AtlasTexture" id=22]
 flags = 4
-atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 184, 137 )
+atlas = ExtResource( 6 )
+region = Rect2( 736, 0, 184, 137 )
 
 [sub_resource type="AtlasTexture" id=23]
 flags = 4
-atlas = ExtResource( 1 )
-region = Rect2( 184, 0, 184, 137 )
+atlas = ExtResource( 6 )
+region = Rect2( 920, 0, 184, 137 )
 
 [sub_resource type="AtlasTexture" id=24]
 flags = 4
-atlas = ExtResource( 4 )
+atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 184, 137 )
 
 [sub_resource type="AtlasTexture" id=25]
 flags = 4
-atlas = ExtResource( 4 )
+atlas = ExtResource( 1 )
 region = Rect2( 184, 0, 184, 137 )
 
 [sub_resource type="AtlasTexture" id=26]
@@ -196,19 +196,19 @@ animations = [ {
 "name": "Attack",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ) ],
+"frames": [ SubResource( 16 ), SubResource( 17 ) ],
+"loop": true,
+"name": "jump",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ) ],
 "loop": true,
 "name": "Idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 22 ), SubResource( 23 ) ],
-"loop": true,
-"name": "Fall",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 24 ), SubResource( 25 ) ],
 "loop": true,
-"name": "jump",
+"name": "Fall",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ) ],
@@ -234,7 +234,6 @@ gravity = 1500.0
 position = Vector2( 0, -25 )
 frames = SubResource( 35 )
 animation = "Idle"
-frame = 1
 speed_scale = 1.75
 playing = true
 
@@ -242,3 +241,4 @@ playing = true
 position = Vector2( -5, -12 )
 scale = Vector2( 1, 1.25 )
 shape = SubResource( 36 )
+[connection signal="animation_finished" from="Actions" to="." method="_on_Actions_animation_finished"]

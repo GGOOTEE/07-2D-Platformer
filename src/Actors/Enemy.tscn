@@ -162,14 +162,16 @@ height = 28.0
 extents = Vector2( 9, 24 )
 
 [node name="Enemy" type="KinematicBody2D"]
-position = Vector2( 0, -32 )
+position = Vector2( 0, -20 )
 collision_layer = 3
 collision_mask = 9
 script = ExtResource( 5 )
 
 [node name="Actions" type="AnimatedSprite" parent="."]
+position = Vector2( 0, 10 )
 frames = SubResource( 25 )
 animation = "Idle"
+frame = 1
 speed_scale = 1.2
 playing = true
 flip_h = true

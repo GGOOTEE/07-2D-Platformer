@@ -66,7 +66,7 @@ position = Vector2( 134, 79 )
 speed = Vector2( 150, 550 )
 
 [node name="Enemy" parent="." instance=ExtResource( 3 )]
-position = Vector2( 689, 531 )
+position = Vector2( 689, 540 )
 speed = Vector2( 100, 500 )
 
 [node name="Portal2D" parent="." instance=ExtResource( 5 )]
