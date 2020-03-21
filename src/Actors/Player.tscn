@@ -233,7 +233,7 @@ gravity = 1500.0
 [node name="Actions" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -25 )
 frames = SubResource( 35 )
-animation = "Idle"
+animation = "Run"
 speed_scale = 1.75
 playing = true
 

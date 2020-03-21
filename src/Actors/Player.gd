@@ -65,12 +65,15 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("Attack"):
 		sprite.play("Attack")
-		
+	
+	if Input.is_action_just_pressed("Run"):
+		sprite.play("Run")
 
 func _on_Actions_animation_finished():
 	if $Actions.animation == "Attack":
 		$Actions.animation = "Idle"
-		
+	if $Actions.animation == "Run":
+		$Actions.animation = "Idle"
 
 
 

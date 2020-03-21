@@ -10,5 +10,5 @@ func _on_body_entered(_body: PhysicsBody2D) -> void:
 
 
 func picked() -> void:
-	#PlayerData.score += score
+	score += 100
 	anim_player.play("fade_out")
