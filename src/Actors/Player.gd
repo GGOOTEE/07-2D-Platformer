@@ -1,6 +1,24 @@
 extends Actor
 
+export var health = 100
+export var score = 0
 
+signal health_changed
+signal score_changed
+
+func _ready():
+	emit_signal("health_changed")
+	emit_signal("score_changed")
+
+func change_health(h):
+	health += h
+	emit_signal("health_changed")
+	#if health <= 0:
+		#die()
+
+func change_score(s):
+	score += s
+	emit_signal("score_changed")
 #export var stomp_impulse: = 600.0
 
 

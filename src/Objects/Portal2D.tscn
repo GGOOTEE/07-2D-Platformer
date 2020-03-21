@@ -4,8 +4,8 @@
 [ext_resource path="res://src/Objects/Portal2D.gd" type="Script" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 69.0
-height = 22.0
+radius = 38.0
+height = 38.0
 
 [sub_resource type="Animation" id=2]
 resource_name = "START"
