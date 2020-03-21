@@ -1,6 +1,6 @@
 extends "res://src/Actors/Actor.gd"
 
-onready var stomp_area: Area2D = $StompArea2D
+
 
 export var score: = 100
 
@@ -14,12 +14,20 @@ func _physics_process(delta: float) -> void:
 	_velocity.y = move_and_slide(_velocity, FLOOR_NORMAL).y
 
 
-func _on_StompArea2D_area_entered(area: Area2D) -> void:
-	if area.global_position.y > stomp_area.global_position.y:
-		return
-	die()
+
 
 
 func die() -> void:
 	#PlayerData.score += score
 	queue_free()
+
+
+func _on_attack_body_entered(body):
+	if body.name == "Player":
+		get_node("/root/SaveSystem").health -= 50
+		get_node("/root/SaveSystem").score -= 25
+		$Actions.animation == "Attack"
+
+func _on_Actions_animation_finished():
+	if $Actions.animation == "Attack":
+		$Actions.animation = "Idle"

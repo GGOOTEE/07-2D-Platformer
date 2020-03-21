@@ -1,6 +1,7 @@
 extends Node2D
 
-var DisplayValue = 0
+var health = 100
+var score = 0
 
 var save_path = "res://save-file.cfg"
 var config = ConfigFile.new()
@@ -11,8 +12,9 @@ func _ready():
 	pass 
 
 func saveValue(section, key):
-	config.set_value(section, key, DisplayValue)
+	config.set_value(section, key, health, score)
 	config.save(save_path)
 
 func loadValue(section, key):
-	DisplayValue = config.get_value(section, key, DisplayValue)
+	health = config.get_value(section, key, health)
+	score = config.get_value(section, key, score)
