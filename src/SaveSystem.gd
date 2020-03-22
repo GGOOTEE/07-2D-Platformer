@@ -22,14 +22,16 @@ func saveValue():
 	config.save(save_path)
 
 
-func loadValue(section, key):
+func loadValue():
 	score = config.get_value("Save", "score")
 	health = config.get_value("Save", "health")
 	level = config.get_value("Save", "level")
-	if level == "1":
-		get_tree().change_scene("res://src/levels/level01.gd")
-	if level == "2":
-		get_tree().change_scene("res://src/levels/level02.gd")
+	if level == 1:
+		get_tree().change_scene("res://src/levels/Level Template.tscn")
+	if level == 2:
+		get_tree().change_scene("res://src/levels/Level02.tscn")
+	emit_signal("change_health")
+	emit_signal("change_health")
 
 func update_health(h):
 	health += h

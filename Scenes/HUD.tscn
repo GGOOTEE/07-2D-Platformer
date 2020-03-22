@@ -24,3 +24,25 @@ text = "SCORE:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Save" type="Button" parent="."]
+margin_left = 1.5
+margin_top = 132.0
+margin_right = 42.5
+margin_bottom = 152.0
+text = "Save"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Load" type="Button" parent="."]
+margin_left = 0.5
+margin_top = 164.0
+margin_right = 42.5
+margin_bottom = 184.0
+text = "Load"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="button_up" from="Save" to="." method="_on_Save_button_up"]
+[connection signal="button_up" from="Load" to="." method="_on_Load_button_up"]
