@@ -237,7 +237,7 @@ gravity = 1500.0
 position = Vector2( 0, -25 )
 frames = SubResource( 35 )
 animation = "Idle"
-frame = 4
+frame = 5
 speed_scale = 1.75
 playing = true
 
@@ -246,9 +246,9 @@ position = Vector2( -5, -12 )
 scale = Vector2( 1, 1.25 )
 shape = SubResource( 36 )
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="attack" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="attack" type="CollisionShape2D" parent="attack"]
 position = Vector2( 18, -12 )
 shape = SubResource( 37 )
 [connection signal="animation_finished" from="Actions" to="." method="_on_Actions_animation_finished"]

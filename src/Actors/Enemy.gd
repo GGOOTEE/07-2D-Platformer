@@ -17,10 +17,13 @@ func _physics_process(delta: float) -> void:
 	_velocity.y = move_and_slide(_velocity, FLOOR_NORMAL).y
 
 func die() -> void:
-	queue_free()
+	get_node("/root/SaveSystem").update_score(100)
+	$Actions.animation = "Death"
+	_velocity.x = 0
+
 
 func _on_attack_body_entered(body):
-	if body.name == "Player":
+	if body.name == "Player" and $Actions.animation != "Death":
 		$Actions.animation = "Attack"
 		_velocity.x = 0
 
@@ -33,3 +36,7 @@ func _on_Actions_animation_finished():
 			if b.name == "Player":
 				get_node("/root/SaveSystem").update_health(-50)
 				get_node("/root/SaveSystem").update_score(-25)
+				b.damaged()
+	if $Actions.animation == "Death":
+		_velocity.x = 0
+		queue_free()

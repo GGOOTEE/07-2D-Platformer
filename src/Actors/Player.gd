@@ -28,48 +28,59 @@ func _physics_process(delta):
 		
 	if is_on_floor() and (Input.is_action_just_released("move_right") or Input.is_action_just_released("move_left")):
 		velocity.y = 0
-	
+
 	var just_landed := is_on_floor() and not snap
 	if just_landed:
-		snap = true	
+		snap = true
 
-	#if(direction == 0):
-		#sprite.play("Idle")
-		#sprite.play("Run")
-		
-		
-		
-		
-		
-		
-	velocity.y += gravity * delta
-	
-	
-	
-	
+# WHERE THE PLAYER IS LOOKING
+	if is_on_floor() and (Input.is_action_just_released("move_left")):
+		$Actions.scale.x = -1
+		$attack.scale.x = -1
+	if is_on_floor() and (Input.is_action_just_released("move_left")):
+		$Actions.scale.x = 1
+		$attack.scale.x = 1
+
+
+
+	if velocity.y > 0 and sprite.animation != "Fall":
+		sprite.play("Fall")
+	elif velocity.y < 0 and sprite.animation != "jump":
+		sprite.play("jump")
+	elif velocity.x != 0 and sprite.animation != "Idle":
+		sprite.play("Run")
+	elif velocity.y == 0 and sprite.animation == "Fall":
+		sprite.play("Idle")
+
+
+
 	if Input.is_action_just_pressed("attack"):
 		sprite.play("Attack")
-		
-func _on_Actions_animation_finished():
-	if $Actions.animation == "Attack":
-		$Actions.animation = "Idle"
-		_velocity.x = -speed.x
 		var bodies = $attack.get_overlapping_bodies()
 		for b in bodies:
-			if b.name == "Player":
-				get_node("/root/SaveSystem").update_health(-50)
-				get_node("/root/SaveSystem").update_score(-25)
+			if b.name.substr(0,5) == "Enemy":
+				b.die()
 	if Input.is_action_just_pressed("Run"):
 		sprite.play("Run")
 
 
+	velocity.y += gravity * delta
+
+
+func _on_Actions_animation_finished():
+	if $Actions.animation == "Attack":
+		$Actions.animation = "Idle"
+		_velocity.x = -speed.x
+	if $Actions.animation == "Run":
+		$Actions.animation = "Idle"
+	if $Actions.animation == "Damaged":
+		$Actions.animation = "Idle"
+		_velocity.x = -speed.x
+
+
+func damaged():
+	sprite.play("Damaged")
+	
 func die():
 	print("You have died")
 	pass
-
-#func die() -> void:
-	#PlayerData.deaths += 1
-	#queue_free()
-
-
-	
