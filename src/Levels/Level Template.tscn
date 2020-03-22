@@ -91,46 +91,6 @@ margin_bottom = 1044.0
 [node name="Coin2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 760, 460 )
 
-[node name="Buttons" type="Node2D" parent="."]
-
-[node name="Save" type="TextureButton" parent="Buttons"]
-margin_left = -10.0
-margin_top = 14.0
-margin_right = 42.0
-margin_bottom = 28.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Text Save" type="Label" parent="Buttons"]
-margin_top = 14.0
-margin_right = 40.0
-margin_bottom = 28.0
-text = "SAVE"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Load" type="TextureButton" parent="Buttons"]
-margin_left = -10.0
-margin_top = 40.0
-margin_right = 42.0
-margin_bottom = 67.0
-__meta__ = {
-"_edit_group_": true,
-"_edit_use_anchors_": false
-}
-
-[node name="Text Load" type="Label" parent="Buttons/Load"]
-margin_left = 11.0
-margin_top = 13.0
-margin_right = 51.0
-margin_bottom = 27.0
-text = "LOAD"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="HUD" parent="." instance=ExtResource( 8 )]
 
 [node name="GameOver" type="Node2D" parent="."]
