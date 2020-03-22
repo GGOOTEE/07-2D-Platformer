@@ -14,15 +14,13 @@ func change_health(h):
 	health += h
 	emit_signal("health_changed")
 	if health <= 0:
-		die()
+		sprite.play("Death")
 
 func change_score(s):
 	score += s
 	emit_signal("score_changed")
 
-func die():
-	queue_free()
-	get_tree().change_scene("res://Scenes/GameOver.tscn")
+
 
 export var snap := false
 export var move_speed := 250
