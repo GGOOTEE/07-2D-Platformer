@@ -47,17 +47,21 @@ func _physics_process(delta):
 	
 	
 	
-	if Input.is_action_just_pressed("Attack"):
+	if Input.is_action_just_pressed("attack"):
 		sprite.play("Attack")
-	
-	if Input.is_action_just_pressed("Run"):
-		sprite.play("Run")
-
+		
 func _on_Actions_animation_finished():
 	if $Actions.animation == "Attack":
 		$Actions.animation = "Idle"
-	if $Actions.animation == "Run":
-		$Actions.animation = "Idle"
+		_velocity.x = -speed.x
+		var bodies = $attack.get_overlapping_bodies()
+		for b in bodies:
+			if b.name == "Player":
+				get_node("/root/SaveSystem").update_health(-50)
+				get_node("/root/SaveSystem").update_score(-25)
+	if Input.is_action_just_pressed("Run"):
+		sprite.play("Run")
+
 
 func die():
 	print("You have died")
