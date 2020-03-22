@@ -13,12 +13,16 @@ func _ready():
 func change_health(h):
 	health += h
 	emit_signal("health_changed")
-	#if health <= 0:
-		#die()
+	if health <= 0:
+		die()
 
 func change_score(s):
 	score += s
 	emit_signal("score_changed")
+
+func die():
+	queue_free()
+	get_tree().change_scene("res://Scenes/GameOver.tscn")
 
 export var snap := false
 export var move_speed := 250
@@ -48,10 +52,9 @@ func _physics_process(delta):
 	if just_landed:
 		snap = true	
 
-	if(direction == 0):
-		sprite.play("Idle")
-	else:
-		sprite.play("Run")
+	#if(direction == 0):
+		#sprite.play("Idle")
+		#sprite.play("Run")
 		
 		
 		
