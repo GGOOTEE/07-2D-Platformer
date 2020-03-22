@@ -6,6 +6,7 @@ var level
 
 signal change_health
 signal change_score
+signal die
 
 var save_path = "res://save-file.cfg"
 var config = ConfigFile.new()
@@ -30,12 +31,12 @@ func loadValue():
 		get_tree().change_scene("res://src/levels/Level Template.tscn")
 	if level == 2:
 		get_tree().change_scene("res://src/levels/Level02.tscn")
-	emit_signal("change_health")
-	emit_signal("change_health")
-
+	
 func update_health(h):
 	health += h
 	emit_signal("change_health")
+	if health <= 0:
+		emit_signal("die")
 
 func update_score(s):
 	score += s
